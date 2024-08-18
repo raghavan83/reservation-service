@@ -1,6 +1,6 @@
 package com.edureka.hotelreservationsystem.reservation_service.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,14 +20,17 @@ public class Reservation {
     @Column(name = "customerId", nullable = false)
     private Long customerId;
 
-    @Column(name = "hotelId", nullable = false)
-    private Long hotelId;
+    @Column(name = "roomId", nullable = false)
+    private Long roomId;
 
-    @Column(name = "startDate", nullable = false)
-    private LocalDate startDate;
+    @Column(name = "check_in_date", nullable = false)
+    private LocalDateTime checkInDate;
 
-    @Column(name = "endDate", nullable = false)
-    private LocalDate endDate;
+    @Column(name = "check_out_date", nullable = false)
+    private LocalDateTime checkOutDate;
+
+    @Column(name = "status", nullable = false)
+    private String status;
 
 	public Reservation() {
 		super();
@@ -62,45 +65,61 @@ public class Reservation {
 	}
 
 	/**
-	 * @return the hotelId
+	 * @return the roomId
 	 */
-	public Long getHotelId() {
-		return hotelId;
+	public Long getRoomId() {
+		return roomId;
 	}
 
 	/**
-	 * @param hotelId the hotelId to set
+	 * @param roomId the roomId to set
 	 */
-	public void setHotelId(Long hotelId) {
-		this.hotelId = hotelId;
+	public void setRoomId(Long roomId) {
+		this.roomId = roomId;
 	}
 
 	/**
-	 * @return the startDate
+	 * @return the checkInDate
 	 */
-	public LocalDate getStartDate() {
-		return startDate;
+	public LocalDateTime getCheckInDate() {
+		return checkInDate;
 	}
 
 	/**
-	 * @param startDate the startDate to set
+	 * @param checkInDate the checkInDate to set
 	 */
-	public void setStartDate(LocalDate startDate) {
-		this.startDate = startDate;
+	public void setCheckInDate(LocalDateTime checkInDate) {
+		this.checkInDate = checkInDate;
 	}
 
 	/**
-	 * @return the endDate
+	 * @return the checkOutDate
 	 */
-	public LocalDate getEndDate() {
-		return endDate;
+	public LocalDateTime getCheckOutDate() {
+		return checkOutDate;
 	}
 
 	/**
-	 * @param endDate the endDate to set
+	 * @param checkOutDate the checkOutDate to set
 	 */
-	public void setEndDate(LocalDate endDate) {
-		this.endDate = endDate;
+	public void setCheckOutDate(LocalDateTime checkOutDate) {
+		this.checkOutDate = checkOutDate;
 	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	
 
 }
